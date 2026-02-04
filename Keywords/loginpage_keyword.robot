@@ -1,8 +1,7 @@
 *** Settings ***
 Resource    Keywords/general.robot
 *** Variables ***
-${LOGIN_PAGE}    
-
+${SHADOW_HOST_CSS_SELECTOR}    button[data-testid="uc-accept-all-button"]
 *** Keywords ***
 User Navigate To Website
     [Documentation]    User Navigate to website
@@ -23,16 +22,17 @@ User Register The Account
 
 User Navigate Sign In Page
     [Documentation]    User Navigate To Sign In Page
-    Replace Xpath And Wait  ${A_CONTAINS_HREF}    ${MY_ACCOUNT}
+    Sleep    ${TIMEOUT_10S}
+    ${ACCEPT_BTN_RES}    Replace String    ${BUTTON_TEXT}  replace   ${ACCEPT_ALL_BTN}
+    Click Shadow DOM Element    ${SHADOW_HOST}    ${SHADOW_HOST_CSS_SELECTOR}
+    Navigate To Page    ${MY_ACCOUNT}
     Capture Page Screenshot
-    Replace Xpath And Click  ${A_CONTAINS_HREF}    ${MY_ACCOUNT}
     Replace Xpath And Wait   ${H1_TEXT}    ${SIGN_IN_OR_REGISTER}
     Replace Xpath And Input Text    ${INPUT_NAME}    ${USERNAME}    ${USERNAME_VAL}
     Capture Page Screenshot
-    ${RES}    run keyword and ignore error    Replace Xpath And Wait   ${H1_TEXT}    ${REGISTER}
-    IF    '${RES}'==True
-        User Register The Account
-    ELSE
-         Replace Xpath And Input Text    ${INPUT_NAME}    ${PASSWORD}    ${PASSWORD_VAL}
-    END
+    Replace Xpath And Click     ${BUTTON_TYPE}    ${SUBMIT}
+    Capture Page Screenshot
+    Replace Xpath And Wait    ${INPUT_ARIA_LABEL}    ${PASSWORD}
+    Replace Xpath And Input Text    ${INPUT_ARIA_LABEL}    ${PASSWORD}    ${PASSWORD_VAL}
+    Replace Xpath And Click     (${SPAN_TXT})[last()]    ${SIGN_IN}
 
