@@ -1,0 +1,67 @@
+# Robot Framework Configuration File
+# https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#configuration-file
+
+# Test execution configuration
+excludes:
+  - .git
+  - .idea
+  - .vscode
+  - __pycache__
+  - node_modules
+  - venv
+  - .venv
+
+# Output directories
+outputdir: results
+
+# Log and report configuration
+log: results/log.html
+report: results/report.html
+output: results/output.xml
+
+# Test data configuration
+testdata:
+  - tests
+
+# Keyword documentation
+docs:
+  - https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
+  - https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html
+
+# Resource files
+resources:
+  - Keywords/general.robot
+
+# Variable files
+variableFiles:
+  - data/general_data.py
+
+# Listener configuration (if needed)
+# listeners:
+#   - MyListener.py
+
+# Dry run mode (set to true to validate tests without execution)
+# dryrun: false
+
+# No colors in output (set to true for CI/CD)
+# nocolors: false
+
+# Tag configuration
+tagdoc:
+  - name: TC_01
+    doc: Login test case
+  - name: regression
+    doc: Regression test suite
+  - name: smoke
+    doc: Smoke test suite
+
+# Test timeout (default for all tests)
+# timeout: 30s
+
+# Library search paths
+pythonpath:
+  - .
+  - Library
+  - Keywords
+  - Keywords/Pages
+  - data

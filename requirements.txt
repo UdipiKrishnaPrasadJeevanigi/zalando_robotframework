@@ -1,0 +1,21 @@
+# Robot Framework dependencies
+robotframework==6.1.1
+robotframework-seleniumlibrary==6.5.1
+robotframework-pythonpath==0.5.1
+
+# Selenium WebDriver
+selenium==4.15.2
+
+# WebDriver managers
+webdriver-manager==4.0.1
+
+# Browser drivers
+chromedriver-autoinstaller==0.6.4
+geckodriver-autoinstaller==0.1.7
+
+# Additional utilities
+robotframework-faker==5.0.0
+robotframework-requests==0.9.6
+robotframework-jsonlibrary==0.5.1
+robotframework-databaselibrary==1.0.0
+robotframework-robocop==3.0.1

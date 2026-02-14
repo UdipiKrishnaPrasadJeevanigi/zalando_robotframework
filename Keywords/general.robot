@@ -1,7 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Resource    Keywords/Pages/Address_Page_Zalando_Keyword.robot
 Variables        data/general_data.py
+
 *** Variables ***
 ${BROWSER}       chrome
 ${PAGE_URL}      https://www.zalando.com/
@@ -19,6 +21,7 @@ ${SPAN_CLASS}       //span[@class = "replace"]
 ${SPAN_CONTAINS_TXT}    //span[contains(text() , "replace")]
 ${SPAN_CONTAINS_CLASS}  //span[contains(@class , "replace")]
 ${A_CONTAINS_HREF}    //a[contains(@href , "replace")]
+${HOME_URL}      https://www.zalando.com/
 
 
 *** Keywords ***

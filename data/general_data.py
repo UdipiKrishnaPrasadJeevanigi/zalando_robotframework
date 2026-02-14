@@ -18,4 +18,10 @@ ACCEPT_ALL_BTN = 'Accept all'
 SHADOW_HOST = '#usercentrics-root'
 PASSWORD = 'Password'
 PASSWORD_VAL = '88n8-G3MqJVtGky'
+CONTINUE_SHOPPING = 'Continue shopping'
+WOMEN_SECTION = 'Women'
+MEN_SECTION = 'Men'
+KIDS_SECTION = 'Kids'
+MEN_SECTION_PAGE = 'men-home'
+
 
