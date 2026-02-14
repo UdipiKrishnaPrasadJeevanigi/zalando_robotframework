@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Library    Library/excel_operations.py
 Resource    Keywords/Pages/Address_Page_Zalando_Keyword.robot
 Variables        data/general_data.py
 
@@ -21,6 +22,8 @@ ${SPAN_CLASS}       //span[@class = "replace"]
 ${SPAN_CONTAINS_TXT}    //span[contains(text() , "replace")]
 ${SPAN_CONTAINS_CLASS}  //span[contains(@class , "replace")]
 ${A_CONTAINS_HREF}    //a[contains(@href , "replace")]
+${A_HREF}         //a[@href = "replace"]
+
 ${HOME_URL}      https://www.zalando.com/
 
 
@@ -30,7 +33,19 @@ Launch Browser
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    --disable-popup-blocking
     Open Browser    ${PAGE_URL}    ${BROWSER}    options=${chrome_options}
-    
+
+Read Excel Values
+    [Documentation]    Keyword to fetch the values from the excel sheet
+    [Arguments]    ${TC_NAME}   ${SHEET_NAME}    ${COUNTRY}
+    ${RESULT_DIR}    Set Variable    ${EXECDIR}\
+    ${EXCEL_FILE_LOC}    Set Variable    ${RESULT_DIR}/data/${COUNTRY}/TestData.xlsx
+    ${EXCEL_FILE_LOC}   Replace String    ${EXCEL_FILE_LOC}    /    \\
+    ${TD_DICT}   Read Excel Row  ${TC_NAME}   ${SHEET_NAME}  ${EXCEL_FILE_LOC}
+    Set Global Variable    ${TD_DICT}
+    log   ${TD_DICT}
+    Set Test Variable    ${LANGUAGERUNTIME}    ${TD_DICT['EXECUTION_LANGUAGE'][0]}
+    RETURN  ${TD_DICT}
+
 Click Element Using Javascript
     [Documentation]    Click element using JavaScript with XPath
     [Arguments]    ${xpath}

@@ -119,3 +119,6 @@ Edit `data/general_data.py` to modify:
 - Tests use Chrome browser by default
 - Screenshots are captured on each action
 - Implicit waits are configured via timeout variables
+
+
+# Manual

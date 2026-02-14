@@ -19,3 +19,7 @@ robotframework-requests==0.9.6
 robotframework-jsonlibrary==0.5.1
 robotframework-databaselibrary==1.0.0
 robotframework-robocop==3.0.1
+
+# Data-driven testing
+pandas==2.1.4
+openpyxl==3.1.2
