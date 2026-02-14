@@ -33,7 +33,10 @@ User Navigate Sign In Page
     Replace Xpath And Wait    ${INPUT_ARIA_LABEL}    ${PASSWORD}
     Replace Xpath And Input Text    ${INPUT_ARIA_LABEL}    ${PASSWORD}    ${VAL_PASSWORD}
     Replace Xpath And Click     (${SPAN_TXT})[last()]    ${SIGN_IN}
-    Replace Xpath And Wait     ${SPAN_TXT}    ${CONTINUE_SHOPPING}
+    ${STA}    Run keyword And Return Status    Wait Until Keyword Succeeds    40sec  2sec   Replace Xpath And Wait     ${SPAN_TXT}    ${CONTINUE_SHOPPING}
+    IF   '${STA}'==False
+        Replace Xpath And Wait     ${SPAN_TXT}    ${CONTINUE_SHOPPING}
+    END
     Capture Page Screenshot 
        
 User Login With Valid Credentials
@@ -50,9 +53,6 @@ User Validates Types Of Home Page Section
     Replace Xpath And Wait    ${SPAN_TXT}    ${WOMEN_SECTION}
     Replace Xpath And Wait    ${SPAN_TXT}    ${MEN_SECTION}
     Replace Xpath And Wait    ${SPAN_TXT}    ${KIDS_SECTION}
-    
-User Navigate To Mens Section
-     [Documentation]    User Navigate To Mens Section Using URL
 
 User LogOut From Page
        [Documentation]    User Logout

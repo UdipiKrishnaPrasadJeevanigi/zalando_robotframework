@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Library    Collections
 Library    Library/excel_operations.py
 Resource    Keywords/Pages/Address_Page_Zalando_Keyword.robot
 Variables        data/general_data.py
@@ -13,6 +14,7 @@ ${H1_TEXT}          //h1[text() = "replace"]
 ${INPUT_NAME}       //input[@name = "replace"]
 ${INPUT_ARIA_LABEL}    //input[contains(@aria-label , "replace")]
 ${INPUT_CONTAINS_CLASS}  //input[contains(@class , "replace")]
+${INPUT_PLACEHOLDER}    //input[@placeholder = "replace"]
 ${BUTTON_TEXT}     //button[@text = "replace"]
 ${INPUT_TYPE}       //input[@type = "replace"]
 ${IMG_TITLE}        //img[contains(@title , "replace")]
@@ -52,6 +54,13 @@ Click Element Using Javascript
     ${element}=    Get WebElement    xpath:${xpath}
     Execute Javascript    arguments[0].scrollIntoView(true); arguments[0].click();    ARGUMENTS    ${element}
 
+Get Base URL
+    [Documentation]    Get Base URL of the current page
+    ${CURRENT URL}    Get Location
+    ${SPLIT CURRENT URL}       Split String    ${current_url}    separator=.com
+    ${BASE URL}     Get From List    ${split_current_url}    0
+    RETURN        ${BASE_URL}
+    
 Replace Xpath And Click
     [Documentation]    Replace Xpath And Wait For Element
     [Arguments]    ${XPATH}  ${NAME}
@@ -84,7 +93,7 @@ Replace Xpath And Input Text
 Navigate To Page
     [Documentation]    Keyword to Navigate to certain page through url
     [Arguments]    ${PAGE_NAME}
-    ${BASE_URL}    Get Location
+    ${BASE_URL}    Get Base URL
     ${RES_URL}      Set Variable       ${BASE_URL}/${PAGE_NAME}/
     Go To     ${RES_URL}
     

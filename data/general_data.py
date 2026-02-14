@@ -27,6 +27,9 @@ MEN_SECTION = 'Men'
 KIDS_SECTION = 'Kids'
 MEN_SECTION_PAGE = 'men-home'
 A_HREF_TITLE = '/'
-
+WALLETS_PAGE = 'wallets'
+MENS_WALLETS_TXT = 'Men’s wallets'
+SEARCH = 'Search'
+NIKE_SHOE = 'Nike Air Max 90'
 
 
