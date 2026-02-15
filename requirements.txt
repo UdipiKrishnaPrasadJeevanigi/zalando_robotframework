@@ -1,7 +1,6 @@
 # Robot Framework dependencies
 robotframework
 robotframework-seleniumlibrary
-robotframework-pythonpath
 
 # Selenium WebDriver
 selenium
@@ -14,11 +13,7 @@ chromedriver-autoinstaller
 geckodriver-autoinstaller
 
 # Additional utilities
-robotframework-faker
-robotframework-requests
-robotframework-jsonlibrary
 robotframework-databaselibrary
-robotframework-robocop
 
 # Data-driven testing
 pandas
