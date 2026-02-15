@@ -1,4 +1,71 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Robot Framework outputs
 *.png
 *.html
 *.xml
-.idea
+results/
+log.html
+report.html
+output.xml
+output.json
+*.robot.txt
+
+# Test results
+test-results/
+test_output/
+screenshots/
+reports/
+
+# Logs
+*.log
+log.txt
+
+# Temporary files
+*.tmp
+*.bak
+*.temp
+.cache/
+
+# Selenium
+*.webdriver/
+
+# Node (if any)
+node_modules/
+package-lock.json
