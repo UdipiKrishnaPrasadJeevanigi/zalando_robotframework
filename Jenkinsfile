@@ -2,18 +2,11 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/UdipiKrishnaPrasadJeevanigi/zalando_robotframework.git'
-            }
-        }
-
         stage('Setup Environment') {
             steps {
                 sh '''
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
+                    pip install --upgrade pip --break-system-packages
+                    pip install -r requirements.txt --break-system-packages
                 '''
             }
         }
