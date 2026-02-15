@@ -14,7 +14,6 @@ pipeline {
         stage('Run Robot Framework Tests') {
             steps {
                 sh '''
-                    . venv/bin/activate
                     robot --outputdir results tests/
                 '''
             }
