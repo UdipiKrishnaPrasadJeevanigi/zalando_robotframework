@@ -2,9 +2,9 @@
 Library    SeleniumLibrary
 Library    String
 Library    Collections
-Library    Library/excel_operations.py
+Library    ../Library/excel_operations.py
 Resource    ../Keywords/Pages/Address_Page_Zalando_Keyword.robot
-Variables        data/general_data.py
+Variables        ../data/general_data.py
 
 *** Variables ***
 ${BROWSER}       chrome
