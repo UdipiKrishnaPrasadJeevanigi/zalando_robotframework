@@ -33,8 +33,12 @@ ${HOME_URL}      https://www.zalando.com/
 Launch Browser
     [Documentation]    Launch browser with specified popup behavior
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --disable-popup-blocking  --headless   --no-sandbox  --disable-dev-shm-usage
-    Open Browser    ${PAGE_URL}    ${BROWSER}    options=${chrome_options}
+    Call Method    ${chrome_options}    add_argument    --disable-popup-blocking
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${chrome_options}    add_argument    --window-size=1920,1080
+    Open Browser    ${PAGE_URL}    chrome    options=${chrome_options}
 
 Read Excel Values
     [Documentation]    Keyword to fetch the values from the excel sheet
