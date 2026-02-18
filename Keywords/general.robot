@@ -33,7 +33,7 @@ ${HOME_URL}      https://www.zalando.com/
 Launch Browser
     [Documentation]    Launch browser with specified popup behavior
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --disable-popup-blocking
+    Call Method    ${chrome_options}    add_argument    --disable-popup-blocking  --headless   --no-sandbox  --disable-dev-shm-usage
     Open Browser    ${PAGE_URL}    ${BROWSER}    options=${chrome_options}
 
 Read Excel Values
