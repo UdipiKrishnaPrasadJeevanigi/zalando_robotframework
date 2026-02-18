@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    Keywords/Pages/My_Accounts_Zalando_Keyword.robot
+Resource    ../../Keywords/Pages/My_Accounts_Zalando_Keyword.robot
 *** Variables ***
 ${SHADOW_HOST_CSS_SELECTOR}    button[data-testid="uc-accept-all-button"]
 *** Keywords ***

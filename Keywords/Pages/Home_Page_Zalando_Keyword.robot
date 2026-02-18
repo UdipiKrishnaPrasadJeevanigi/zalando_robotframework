@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    Keywords/Pages/Login_Page_Zalando_Keyword.robot
+Resource    ../../Keywords/Pages/Login_Page_Zalando_Keyword.robot
 
 
 *** Variables ***

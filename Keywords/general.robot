@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Library    String
 Library    Collections
 Library    Library/excel_operations.py
-Resource    Keywords/Pages/Address_Page_Zalando_Keyword.robot
+Resource    ../Keywords/Pages/Address_Page_Zalando_Keyword.robot
 Variables        data/general_data.py
 
 *** Variables ***
@@ -37,7 +37,7 @@ Launch Browser
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
-    Call Method    ${chrome_options}    add_argument    --window-size=1920,1080
+#    Call Method    ${chrome_options}    add_argument    --window-size=1920,1080
     Open Browser    ${PAGE_URL}    chrome    options=${chrome_options}
 
 Read Excel Values
