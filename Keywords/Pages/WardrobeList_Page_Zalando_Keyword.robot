@@ -1,2 +1,2 @@
 *** Settings ***
-Resource    Keywords/general.robot
+Resource    ../../Keywords/general.robot
