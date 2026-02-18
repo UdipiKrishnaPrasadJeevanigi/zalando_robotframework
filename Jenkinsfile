@@ -1,6 +1,11 @@
 pipeline {
     agent any
-    
+
+    environment {
+        PYTHONUNBUFFERED = '1'
+        PATH = "/var/jenkins_home/.local/bin:${env.PATH}"
+    }
+
     stages {
         stage('Setup Environment') {
             steps {
