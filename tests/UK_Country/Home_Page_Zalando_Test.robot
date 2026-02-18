@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    Keywords/Pages/Home_Page_Zalando_Keyword.robot
+Resource    ../../Keywords/Pages/Home_Page_Zalando_Keyword.robot
 Test Teardown    Close All Browsers
 *** Variables ***
 ${SHEET_NAME}    Zalando_UK
